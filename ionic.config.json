@@ -1,0 +1,7 @@
+{
+  "name": "mtech",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
