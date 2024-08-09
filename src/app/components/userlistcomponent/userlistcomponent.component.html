@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2"><strong>ID</strong></ion-col>
+      <ion-col size="5"><strong>Name</strong></ion-col>
+      <ion-col size="5"><strong>Email</strong></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let user of users">
+      <ion-col size="2">{{ user.id }}</ion-col>
+      <ion-col size="5">{{ user.Name }}</ion-col>
+      <ion-col size="5">{{ user.Email }}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
