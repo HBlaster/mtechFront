@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserserviceService} from '../../services/userservice.service';
+import {User} from './model/users.response';
 
 @Component({
   selector: 'app-userlistcomponent',
@@ -8,7 +9,7 @@ import {UserserviceService} from '../../services/userservice.service';
 })
 export class UserlistcomponentComponent  implements OnInit {
 
-  users: any[] = [];
+  users: User[] = [];
   constructor(
     private _userService: UserserviceService
   ) { }
@@ -19,9 +20,11 @@ export class UserlistcomponentComponent  implements OnInit {
 
   retrieveUsers(){
     this._userService.getUsers().subscribe(
-      (data:any)=>{
-        console.log("Data: ", data);
+      (data)=>{
         this.users = data;
+      },
+      (error) => {
+        console.error('Error fetching users', error);
       }
     );
   }
